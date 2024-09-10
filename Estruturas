@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+struct RgAluno {
+    char nome[35];
+    float nota[4];
+};
+
+int main() {
+    struct RgAluno Aluno;
+    float soma = 0, media;
+
+    printf("Nome: ");
+    fgets(Aluno.nome, 35, stdin);
+
+    for (int i = 0; i < 4; i++) {
+        printf("Nota %d: ", i + 1);
+        scanf("%f", &Aluno.nota[i]);
+        soma += Aluno.nota[i];
+    }
+
+    media = soma / 4;
+
+    printf("\nNome: %sMédia: %.2f\n", Aluno.nome, media);
+    return 0;
+}
